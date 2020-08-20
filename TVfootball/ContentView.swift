@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var scheduleStore: ScheduleStore
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List {
+            ForEach(scheduleStore.items) {
+                item in ScheduleRow(item: item)
+            }
+        }.onAppear(perform: fetch)
+    }
+    
+    private func fetch() {
+        scheduleStore.fetch()
     }
 }
 

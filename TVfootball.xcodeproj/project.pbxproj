@@ -11,6 +11,9 @@
 		D498DD9324ED79C80060CB1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DD9224ED79C80060CB1D /* ContentView.swift */; };
 		D498DD9524ED79CB0060CB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D498DD9424ED79CB0060CB1D /* Assets.xcassets */; };
 		D498DD9824ED79CB0060CB1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D498DD9724ED79CB0060CB1D /* Preview Assets.xcassets */; };
+		D498DDA124ED7CA00060CB1D /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA024ED7CA00060CB1D /* ScheduleService.swift */; };
+		D498DDA324ED8DD20060CB1D /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA224ED8DD20060CB1D /* ScheduleStore.swift */; };
+		D498DDA524EDA6770060CB1D /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA424EDA6770060CB1D /* ScheduleRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		D498DD9724ED79CB0060CB1D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D498DD9924ED79CB0060CB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D498DD9A24ED79CB0060CB1D /* TVfootball.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TVfootball.entitlements; sourceTree = "<group>"; };
+		D498DDA024ED7CA00060CB1D /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
+		D498DDA224ED8DD20060CB1D /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStore.swift; sourceTree = "<group>"; };
+		D498DDA424EDA6770060CB1D /* ScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				D498DD9924ED79CB0060CB1D /* Info.plist */,
 				D498DD9A24ED79CB0060CB1D /* TVfootball.entitlements */,
 				D498DD9624ED79CB0060CB1D /* Preview Content */,
+				D498DDA024ED7CA00060CB1D /* ScheduleService.swift */,
+				D498DDA224ED8DD20060CB1D /* ScheduleStore.swift */,
+				D498DDA424EDA6770060CB1D /* ScheduleRow.swift */,
 			);
 			path = TVfootball;
 			sourceTree = "<group>";
@@ -140,8 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D498DDA324ED8DD20060CB1D /* ScheduleStore.swift in Sources */,
+				D498DDA124ED7CA00060CB1D /* ScheduleService.swift in Sources */,
 				D498DD9324ED79C80060CB1D /* ContentView.swift in Sources */,
 				D498DD9124ED79C80060CB1D /* TVfootballApp.swift in Sources */,
+				D498DDA524EDA6770060CB1D /* ScheduleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +281,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TVfootball/TVfootball.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TVfootball/Preview Content\"";
@@ -293,6 +306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TVfootball/TVfootball.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TVfootball/Preview Content\"";
