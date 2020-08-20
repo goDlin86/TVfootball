@@ -17,5 +17,6 @@ struct ScheduleRow: View {
             Text(item.title)
                 .font(.headline)
         }
+        .padding(/*@START_MENU_TOKEN@*/.vertical, 1.0/*@END_MENU_TOKEN@*/)
     }
 }

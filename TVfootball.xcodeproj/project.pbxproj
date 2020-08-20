@@ -14,6 +14,7 @@
 		D498DDA124ED7CA00060CB1D /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA024ED7CA00060CB1D /* ScheduleService.swift */; };
 		D498DDA324ED8DD20060CB1D /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA224ED8DD20060CB1D /* ScheduleStore.swift */; };
 		D498DDA524EDA6770060CB1D /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA424EDA6770060CB1D /* ScheduleRow.swift */; };
+		D4D16D4324EEC14A00E2AE62 /* ScheduleDayRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D16D4224EEC14A00E2AE62 /* ScheduleDayRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D498DDA024ED7CA00060CB1D /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
 		D498DDA224ED8DD20060CB1D /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStore.swift; sourceTree = "<group>"; };
 		D498DDA424EDA6770060CB1D /* ScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
+		D4D16D4224EEC14A00E2AE62 /* ScheduleDayRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDayRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				D498DDA024ED7CA00060CB1D /* ScheduleService.swift */,
 				D498DDA224ED8DD20060CB1D /* ScheduleStore.swift */,
 				D498DDA424EDA6770060CB1D /* ScheduleRow.swift */,
+				D4D16D4224EEC14A00E2AE62 /* ScheduleDayRow.swift */,
 			);
 			path = TVfootball;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				D498DDA324ED8DD20060CB1D /* ScheduleStore.swift in Sources */,
 				D498DDA124ED7CA00060CB1D /* ScheduleService.swift in Sources */,
+				D4D16D4324EEC14A00E2AE62 /* ScheduleDayRow.swift in Sources */,
 				D498DD9324ED79C80060CB1D /* ContentView.swift in Sources */,
 				D498DD9124ED79C80060CB1D /* TVfootballApp.swift in Sources */,
 				D498DDA524EDA6770060CB1D /* ScheduleRow.swift in Sources */,

@@ -10,25 +10,25 @@ import Foundation
 class ScheduleService {
     private let session: URLSession
     private let decoder: JSONDecoder
+    
+    typealias completionHandler = (Data?, URLResponse?, Error?) -> Void
+        
+    var tasks = [completionHandler]()
 
     init(session: URLSession = .shared, decoder: JSONDecoder = .init()) {
         self.session = session
         self.decoder = decoder
     }
 
-    func fetch(handler: @escaping (Result<[ScheduleItem], Error>) -> Void) {
+    func fetch(date: String, handler: @escaping (Result<[ScheduleItem], Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: "https://tv.mail.ru/ajax/channel/")
             else { preconditionFailure("Can't create url components...") }
         
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD"
-
         urlComponents.queryItems = [
             URLQueryItem(name: "region_id", value: "24"), // Voronezh
             URLQueryItem(name: "channel_id", value: "2060"), // MatchTV
-            URLQueryItem(name: "date", value: dateFormatter.string(from: date)) // YYYY-MM-DD
+            URLQueryItem(name: "date", value: date) // YYYY-MM-DD
         ]
 
         guard
@@ -53,9 +53,7 @@ class ScheduleService {
 }
 
 
-struct ScheduleItem: Decodable, Identifiable {
-    var id: UUID
-    
+struct ScheduleItem: Decodable {
     let title: String
     let time: String
     let url: String
@@ -70,8 +68,6 @@ struct ScheduleItem: Decodable, Identifiable {
     }
     
     init(from decoder: Decoder) throws {
-        id = UUID()
-        
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         let name = try values.decode(String.self, forKey: .name)

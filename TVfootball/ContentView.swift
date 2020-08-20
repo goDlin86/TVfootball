@@ -12,10 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         List {
-            ForEach(scheduleStore.items) {
-                item in ScheduleRow(item: item)
+            ForEach(scheduleStore.data, id: \.date) {
+                day in ScheduleDayRow(day: day)
             }
-        }.onAppear(perform: fetch)
+        }
+        .onAppear(perform: fetch)
     }
     
     private func fetch() {
