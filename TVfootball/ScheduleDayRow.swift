@@ -11,17 +11,22 @@ struct ScheduleDayRow: View {
     let day: ScheduleDay
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(day.date.capitalized)
-                .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
-                .fontWeight(.heavy)
-                .foregroundColor(.gray)
-                .padding(.vertical, 10.0)
-            ForEach(day.items, id: \.time) {
-                item in ScheduleRow(item: item)
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text(day.date.capitalized)
+                    .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.heavy)
+                    .foregroundColor(.gray)
+                    .padding(.bottom, 10.0)
+                ForEach(day.items, id: \.time) {
+                    item in ScheduleRow(item: item)
+                }
             }
+            .padding(10)
+            .background(Color.black)
+            .cornerRadius(10)
+            .frame(maxHeight: 500)
         }
-        .padding(/*@START_MENU_TOKEN@*/.vertical, 5.0/*@END_MENU_TOKEN@*/)
     }
 }
 

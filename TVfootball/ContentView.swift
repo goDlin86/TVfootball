@@ -10,12 +10,18 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var scheduleStore: ScheduleStore
     
+    private var gridItemLayout: [GridItem] =
+    Array(repeating: .init(.flexible(), alignment: .top), count: 7)
+    
     var body: some View {
-        List {
-            ForEach(scheduleStore.data, id: \.date) {
-                day in ScheduleDayRow(day: day)
+        ScrollView {
+            LazyVGrid(columns: gridItemLayout, alignment: .center) {
+                ForEach(scheduleStore.data, id: \.date) {
+                    day in ScheduleDayRow(day: day)
+                }
             }
         }
+        .padding(10)
         .onAppear(perform: fetch)
     }
     
