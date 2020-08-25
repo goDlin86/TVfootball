@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4271B2D24F55C9100318765 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4271B2C24F55C9100318765 /* WidgetKit.framework */; };
+		D4271B2F24F55C9100318765 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4271B2E24F55C9100318765 /* SwiftUI.framework */; };
+		D4271B3224F55C9100318765 /* TVfootbalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4271B3124F55C9100318765 /* TVfootbalWidget.swift */; };
+		D4271B3424F55C9800318765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4271B3324F55C9800318765 /* Assets.xcassets */; };
+		D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D498DD9124ED79C80060CB1D /* TVfootballApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DD9024ED79C80060CB1D /* TVfootballApp.swift */; };
 		D498DD9324ED79C80060CB1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DD9224ED79C80060CB1D /* ContentView.swift */; };
 		D498DD9524ED79CB0060CB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D498DD9424ED79CB0060CB1D /* Assets.xcassets */; };
@@ -17,7 +22,38 @@
 		D4D16D4324EEC14A00E2AE62 /* ScheduleDayRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D16D4224EEC14A00E2AE62 /* ScheduleDayRow.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D4271B3724F55C9800318765 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D498DD8524ED79C80060CB1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4271B2924F55C9100318765;
+			remoteInfo = TVfootbalWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D4271B3A24F55C9800318765 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TVfootbalWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4271B2C24F55C9100318765 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D4271B2E24F55C9100318765 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D4271B3124F55C9100318765 /* TVfootbalWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVfootbalWidget.swift; sourceTree = "<group>"; };
+		D4271B3324F55C9800318765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4271B3524F55C9800318765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4271B3624F55C9800318765 /* TVfootbalWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TVfootbalWidget.entitlements; sourceTree = "<group>"; };
 		D498DD8D24ED79C80060CB1D /* TVfootball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVfootball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D498DD9024ED79C80060CB1D /* TVfootballApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVfootballApp.swift; sourceTree = "<group>"; };
 		D498DD9224ED79C80060CB1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +68,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D4271B2724F55C9100318765 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4271B2F24F55C9100318765 /* SwiftUI.framework in Frameworks */,
+				D4271B2D24F55C9100318765 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D498DD8A24ED79C80060CB1D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +87,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4271B2B24F55C9100318765 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4271B2C24F55C9100318765 /* WidgetKit.framework */,
+				D4271B2E24F55C9100318765 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4271B3024F55C9100318765 /* TVfootbalWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D4271B3124F55C9100318765 /* TVfootbalWidget.swift */,
+				D4271B3324F55C9800318765 /* Assets.xcassets */,
+				D4271B3524F55C9800318765 /* Info.plist */,
+				D4271B3624F55C9800318765 /* TVfootbalWidget.entitlements */,
+			);
+			path = TVfootbalWidget;
+			sourceTree = "<group>";
+		};
 		D498DD8424ED79C80060CB1D = {
 			isa = PBXGroup;
 			children = (
 				D498DD8F24ED79C80060CB1D /* TVfootball */,
+				D4271B3024F55C9100318765 /* TVfootbalWidget */,
+				D4271B2B24F55C9100318765 /* Frameworks */,
 				D498DD8E24ED79C80060CB1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D498DD8D24ED79C80060CB1D /* TVfootball.app */,
+				D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +154,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D4271B2924F55C9100318765 /* TVfootbalWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4271B3D24F55C9800318765 /* Build configuration list for PBXNativeTarget "TVfootbalWidgetExtension" */;
+			buildPhases = (
+				D4271B2624F55C9100318765 /* Sources */,
+				D4271B2724F55C9100318765 /* Frameworks */,
+				D4271B2824F55C9100318765 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVfootbalWidgetExtension;
+			productName = TVfootbalWidgetExtension;
+			productReference = D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D498DD8C24ED79C80060CB1D /* TVfootball */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D498DD9D24ED79CB0060CB1D /* Build configuration list for PBXNativeTarget "TVfootball" */;
@@ -93,10 +178,12 @@
 				D498DD8924ED79C80060CB1D /* Sources */,
 				D498DD8A24ED79C80060CB1D /* Frameworks */,
 				D498DD8B24ED79C80060CB1D /* Resources */,
+				D4271B3A24F55C9800318765 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D4271B3824F55C9800318765 /* PBXTargetDependency */,
 			);
 			name = TVfootball;
 			productName = TVfootball;
@@ -112,6 +199,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					D4271B2924F55C9100318765 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					D498DD8C24ED79C80060CB1D = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -131,11 +221,20 @@
 			projectRoot = "";
 			targets = (
 				D498DD8C24ED79C80060CB1D /* TVfootball */,
+				D4271B2924F55C9100318765 /* TVfootbalWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D4271B2824F55C9100318765 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4271B3424F55C9800318765 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D498DD8B24ED79C80060CB1D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +247,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D4271B2624F55C9100318765 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4271B3224F55C9100318765 /* TVfootbalWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D498DD8924ED79C80060CB1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,7 +270,63 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D4271B3824F55C9800318765 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4271B2924F55C9100318765 /* TVfootbalWidgetExtension */;
+			targetProxy = D4271B3724F55C9800318765 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D4271B3B24F55C9800318765 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TVfootbalWidget/TVfootbalWidget.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DSDJBCKZT4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = TVfootbalWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.TVfootball.TVfootbalWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D4271B3C24F55C9800318765 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TVfootbalWidget/TVfootbalWidget.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DSDJBCKZT4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = TVfootbalWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.TVfootball.TVfootbalWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		D498DD9B24ED79CB0060CB1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -282,6 +445,7 @@
 		D498DD9E24ED79CB0060CB1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TVfootball/TVfootball.entitlements;
@@ -307,6 +471,7 @@
 		D498DD9F24ED79CB0060CB1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TVfootball/TVfootball.entitlements;
@@ -332,6 +497,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D4271B3D24F55C9800318765 /* Build configuration list for PBXNativeTarget "TVfootbalWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4271B3B24F55C9800318765 /* Debug */,
+				D4271B3C24F55C9800318765 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D498DD8824ED79C80060CB1D /* Build configuration list for PBXProject "TVfootball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

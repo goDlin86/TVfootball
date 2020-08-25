@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct ScheduleDay {
+public struct ScheduleDay {
     let date: String
     let items: [ScheduleItem]
 }
