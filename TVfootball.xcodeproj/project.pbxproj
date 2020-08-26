@@ -12,6 +12,7 @@
 		D4271B3224F55C9100318765 /* TVfootbalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4271B3124F55C9100318765 /* TVfootbalWidget.swift */; };
 		D4271B3424F55C9800318765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4271B3324F55C9800318765 /* Assets.xcassets */; };
 		D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D46E21FF24F6CDA0000735E1 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA024ED7CA00060CB1D /* ScheduleService.swift */; };
 		D498DD9124ED79C80060CB1D /* TVfootballApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DD9024ED79C80060CB1D /* TVfootballApp.swift */; };
 		D498DD9324ED79C80060CB1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DD9224ED79C80060CB1D /* ContentView.swift */; };
 		D498DD9524ED79CB0060CB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D498DD9424ED79CB0060CB1D /* Assets.xcassets */; };
@@ -251,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46E21FF24F6CDA0000735E1 /* ScheduleService.swift in Sources */,
 				D4271B3224F55C9100318765 /* TVfootbalWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -53,6 +53,11 @@ class ScheduleService {
 }
 
 
+struct ScheduleDay {
+    let date: String
+    let items: [ScheduleItem]
+}
+
 struct ScheduleItem: Decodable {
     let title: String
     let time: String

@@ -8,11 +8,6 @@
 import Foundation
 import Combine
 
-public struct ScheduleDay {
-    let date: String
-    let items: [ScheduleItem]
-}
-
 final class ScheduleStore: ObservableObject {
     @Published private(set) var data: [ScheduleDay] = []
     
