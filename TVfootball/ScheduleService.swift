@@ -12,23 +12,27 @@ class ScheduleService {
     private let decoder: JSONDecoder
     
     typealias completionHandler = (Data?, URLResponse?, Error?) -> Void
-        
-    var tasks = [completionHandler]()
 
     init(session: URLSession = .shared, decoder: JSONDecoder = .init()) {
         self.session = session
         self.decoder = decoder
     }
 
-    func fetch(date: String, handler: @escaping (Result<[ScheduleItem], Error>) -> Void) {
+    func fetch(date: Date, handler: @escaping (Result<ScheduleDay, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: "https://tv.mail.ru/ajax/channel/")
             else { preconditionFailure("Can't create url components...") }
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        let dayFormatter = DateFormatter()
+        dayFormatter.locale = Locale(identifier: "ru_Ru")
+        dayFormatter.dateFormat = "EEEE, dd MMM"
+        
         urlComponents.queryItems = [
             URLQueryItem(name: "region_id", value: "24"), // Voronezh
             URLQueryItem(name: "channel_id", value: "2060"), // MatchTV
-            URLQueryItem(name: "date", value: date) // YYYY-MM-DD
+            URLQueryItem(name: "date", value: dateFormatter.string(for: date)) // YYYY-MM-DD
         ]
 
         guard
@@ -42,7 +46,14 @@ class ScheduleService {
                 do {
                     let data = data ?? Data()
                     let response = try self?.decoder.decode(ScheduleResponse.self, from: data)
-                    handler(.success(response?.items ?? []))
+                    handler(
+                        .success(
+                            ScheduleDay(
+                                date: dayFormatter.string(for: date) ?? "23 aug",
+                                items: response?.items.filter { $0.title.contains("Футбол") } ?? []
+                            )
+                        )
+                    )
                 } catch {
                     print(error)
                     handler(.failure(error))

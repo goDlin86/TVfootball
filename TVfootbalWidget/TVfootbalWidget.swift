@@ -9,49 +9,35 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+    
+    let service = ScheduleService()
+    
     func placeholder(in context: Context) -> ScheduleEntry {
-        ScheduleEntry(date: Date(), day: ScheduleDay(date: "", items: []))
+        ScheduleEntry(date: Date(), day: ScheduleDay(date: "23 aug", items: []))
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
-        let entry = ScheduleEntry(date: Date(), day: ScheduleDay(date: "", items: []))
+        let entry = ScheduleEntry(date: Date(), day: ScheduleDay(date: "23 aug", items: []))
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [ScheduleEntry] = []
         
-        let service = ScheduleService()
+        let components = DateComponents(hour: 2)
+        let futureDate = Calendar.current.date(byAdding: components, to: Date())!
         
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        let dayFormatter = DateFormatter()
-        dayFormatter.locale = Locale(identifier: "ru_Ru")
-        dayFormatter.dateFormat = "EEEE, dd MMM"
-        
-        service.fetch(date: dateFormatter.string(from: date)) { result in
-            var day: ScheduleDay
+        service.fetch(date: Date()) { result in
+            var sDay: ScheduleDay
             switch result {
-            case .success(let items):
-                day = ScheduleDay(
-                    date: dayFormatter.string(from: date),
-                    items: items.filter { $0.title.contains("Футбол") }
-                )
+            case .success(let day):
+                sDay = day
             case .failure:
-                day = ScheduleDay(date: dayFormatter.string(from: date), items: [])
+                sDay = ScheduleDay(date: "23 aug", items: [])
             }
         
+            let entry = ScheduleEntry(date: Date(), day: sDay)
 
-            // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-            let currentDate = Date()
-            for hourOffset in 0 ..< 5 {
-                let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-                let entry = ScheduleEntry(date: entryDate, day: day)
-                entries.append(entry)
-            }
-
-            let timeline = Timeline(entries: entries, policy: .atEnd)
+            let timeline = Timeline(entries: [entry], policy: .after(futureDate))
             completion(timeline)
         }
     }
@@ -66,16 +52,23 @@ struct TVfootbalWidgetEntryView : View {
     let day: ScheduleDay
 
     var body: some View {
-        Text(day.date)
-        ForEach(day.items, id: \.time) { item in
-            Text(item.title)
+        VStack(alignment: .leading) {
+            Text(day.date.capitalized)
+                .font(.title3)
+                .fontWeight(.heavy)
+                .foregroundColor(.gray)
+                .padding(.bottom, 5)
+            ForEach(day.items, id: \.time) {
+                item in ScheduleRow(item: item)
+            }
         }
+        .padding(10)
     }
 }
 
 @main
 struct TVfootbalWidget: Widget {
-    let kind: String = "TVfootbalWidget"
+    let kind: String = "TVfootballWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

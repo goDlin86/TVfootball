@@ -20,6 +20,7 @@
 		D498DDA124ED7CA00060CB1D /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA024ED7CA00060CB1D /* ScheduleService.swift */; };
 		D498DDA324ED8DD20060CB1D /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA224ED8DD20060CB1D /* ScheduleStore.swift */; };
 		D498DDA524EDA6770060CB1D /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA424EDA6770060CB1D /* ScheduleRow.swift */; };
+		D4BE4D7524F8110200E6F57A /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA424EDA6770060CB1D /* ScheduleRow.swift */; };
 		D4D16D4324EEC14A00E2AE62 /* ScheduleDayRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D16D4224EEC14A00E2AE62 /* ScheduleDayRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -252,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BE4D7524F8110200E6F57A /* ScheduleRow.swift in Sources */,
 				D46E21FF24F6CDA0000735E1 /* ScheduleService.swift in Sources */,
 				D4271B3224F55C9100318765 /* TVfootbalWidget.swift in Sources */,
 			);
