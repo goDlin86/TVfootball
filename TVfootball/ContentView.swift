@@ -20,8 +20,9 @@ struct ContentView: View {
                     day in ScheduleDayRow(day: day)
                 }
             }
+            .padding(10)
         }
-        .padding(10)
+        .frame(minWidth: 800, maxWidth: .infinity, minHeight: 600, maxHeight: .infinity, alignment: .center)
         .onAppear(perform: fetch)
     }
     

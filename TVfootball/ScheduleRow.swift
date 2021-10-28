@@ -14,8 +14,10 @@ struct ScheduleRow: View {
         VStack(alignment: .leading) {
             Text(item.time)
                 .font(.subheadline)
+                .foregroundColor(Color(white: 1, opacity: 0.6))
             Text(item.title)
                 .font(.headline)
+                .foregroundColor(Color(white: 1, opacity: 0.85))
         }
         .padding(/*@START_MENU_TOKEN@*/.vertical, 1.0/*@END_MENU_TOKEN@*/)
     }

@@ -27,6 +27,7 @@ struct ScheduleDayRow: View {
             .cornerRadius(10)
             .frame(maxHeight: 500)
         }
+        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.7), radius: 10)
     }
 }
 

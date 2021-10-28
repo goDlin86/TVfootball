@@ -53,12 +53,19 @@ struct TVfootbalWidgetEntryView : View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(day.date.capitalized)
-                .font(.title3)
-                .fontWeight(.heavy)
-                .foregroundColor(.gray)
-                .padding(.bottom, 5)
-            ForEach(day.items, id: \.time) {
+            HStack {
+                Text(day.date.capitalized)
+                    .font(.title3)
+                    .fontWeight(.heavy)
+                    .foregroundColor(.gray)
+                Spacer()
+                Image("MatchTV")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            }
+            .padding(.bottom, 5)
+            ForEach(day.items.prefix(2), id: \.time) {
                 item in ScheduleRow(item: item)
             }
         }
@@ -76,5 +83,11 @@ struct TVfootbalWidget: Widget {
         }
         .configurationDisplayName("TV football")
         .description("Match TV football")
+    }
+}
+
+struct TVfootbalWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        TVfootbalWidgetEntryView(day: ScheduleDay(date: "27 august", items: []))
     }
 }
