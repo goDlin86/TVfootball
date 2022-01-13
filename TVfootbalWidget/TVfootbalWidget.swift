@@ -12,6 +12,9 @@ struct Provider: TimelineProvider {
     
     let service = ScheduleService()
     
+    @AppStorage("isFootball") private var isFootball: Bool?
+    @AppStorage("isBiathlon") private var isBiathlon: Bool?
+    
     func placeholder(in context: Context) -> ScheduleEntry {
         ScheduleEntry(date: Date(), day: ScheduleDay(date: "23 aug", items: []))
     }
@@ -25,8 +28,15 @@ struct Provider: TimelineProvider {
         
         let components = DateComponents(hour: 2)
         let futureDate = Calendar.current.date(byAdding: components, to: Date())!
+        var sports: [String] = []
+        if isFootball ?? true {
+            sports.append("Футбол")
+        }
+        if isBiathlon ?? false {
+            sports.append("Биатлон")
+        }
         
-        service.fetch(date: Date()) { result in
+        service.fetch(date: Date(), sports: sports) { result in
             var sDay: ScheduleDay
             switch result {
             case .success(let day):

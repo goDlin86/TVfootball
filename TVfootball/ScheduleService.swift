@@ -11,14 +11,12 @@ class ScheduleService {
     private let session: URLSession
     private let decoder: JSONDecoder
     
-    typealias completionHandler = (Data?, URLResponse?, Error?) -> Void
-
     init(session: URLSession = .shared, decoder: JSONDecoder = .init()) {
         self.session = session
         self.decoder = decoder
     }
 
-    func fetch(date: Date, handler: @escaping (Result<ScheduleDay, Error>) -> Void) {
+    func fetch(date: Date, sports: [String], handler: @escaping (Result<ScheduleDay, Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: "https://tv.mail.ru/ajax/channel/")
             else { preconditionFailure("Can't create url components...") }
@@ -50,7 +48,7 @@ class ScheduleService {
                         .success(
                             ScheduleDay(
                                 date: dayFormatter.string(for: date) ?? "23 aug",
-                                items: response?.items.filter { $0.title.contains("Футбол") } ?? []
+                                items: response?.items.filter { sports.contains(where: $0.title.contains) } ?? []
                             )
                         )
                     )
