@@ -10,8 +10,8 @@ import SwiftUI
 final class ScheduleStore: ObservableObject {
     @Published private(set) var data: [ScheduleDay] = []
     
-    @AppStorage("isFootball") private var isFootball: Bool?
-    @AppStorage("isBiathlon") private var isBiathlon: Bool?
+    @AppStorage("isFootball", store: UserDefaults(suiteName: "tv")) private var isFootball: Bool?
+    @AppStorage("isBiathlon", store: UserDefaults(suiteName: "tv")) private var isBiathlon: Bool?
     
     private let service: ScheduleService
     init(service: ScheduleService) {
@@ -38,10 +38,9 @@ final class ScheduleStore: ObservableObject {
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let day):
-                        self?.data[i] = day //.append(day)
+                        self?.data[i] = day
                     case .failure:
                         print(newDate)
-                        //self?.items = []
                     }
                 }
             }

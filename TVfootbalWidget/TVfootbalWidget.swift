@@ -12,8 +12,8 @@ struct Provider: TimelineProvider {
     
     let service = ScheduleService()
     
-    @AppStorage("isFootball") private var isFootball: Bool?
-    @AppStorage("isBiathlon") private var isBiathlon: Bool?
+    @AppStorage("isFootball", store: UserDefaults(suiteName: "tv")) private var isFootball: Bool?
+    @AppStorage("isBiathlon", store: UserDefaults(suiteName: "tv")) private var isBiathlon: Bool?
     
     func placeholder(in context: Context) -> ScheduleEntry {
         ScheduleEntry(date: Date(), day: ScheduleDay(date: "23 aug", items: []))
