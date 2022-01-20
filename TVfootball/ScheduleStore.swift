@@ -10,8 +10,9 @@ import SwiftUI
 final class ScheduleStore: ObservableObject {
     @Published private(set) var data: [ScheduleDay] = []
     
-    @AppStorage("isFootball", store: UserDefaults(suiteName: "tv")) private var isFootball: Bool?
-    @AppStorage("isBiathlon", store: UserDefaults(suiteName: "tv")) private var isBiathlon: Bool?
+    @AppStorage("isFootball", store: UserDefaults(suiteName: "home.TVfootball.tv")) private var isFootball: Bool?
+    @AppStorage("isBiathlon", store: UserDefaults(suiteName: "home.TVfootball.tv")) private var isBiathlon: Bool?
+    @AppStorage("isOlympic", store: UserDefaults(suiteName: "home.TVfootball.tv")) private var isOlympic: Bool?
     
     private let service: ScheduleService
     init(service: ScheduleService) {
@@ -27,6 +28,9 @@ final class ScheduleStore: ObservableObject {
         }
         if isBiathlon ?? false {
             sports.append("Биатлон")
+        }
+        if isOlympic ?? false {
+            sports.append("Олимпиада")
         }
         
         data = [ScheduleDay](repeating: ScheduleDay(date: "", items: []), count: 7)
