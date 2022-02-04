@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             OptionsView()
-            LazyVGrid(columns: gridItemLayout, alignment: .center) {
+            LazyVGrid(columns: gridItemLayout, alignment: .leading) {
                 ForEach(scheduleStore.data, id: \.date) {
                     day in ScheduleDayRow(day: day)
                 }

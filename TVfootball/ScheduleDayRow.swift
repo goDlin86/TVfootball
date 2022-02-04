@@ -11,7 +11,7 @@ struct ScheduleDayRow: View {
     let day: ScheduleDay
 
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical) {
             VStack(alignment: .leading) {
                 Text(day.date.capitalized)
                     .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
@@ -25,7 +25,7 @@ struct ScheduleDayRow: View {
             .padding(10)
             .background(Color.black)
             .cornerRadius(10)
-            .frame(maxHeight: 500)
+            //.frame(maxHeight: 500)
         }
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.7), radius: 10)
     }

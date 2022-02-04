@@ -37,7 +37,7 @@ struct Provider: TimelineProvider {
             sports.append("Биатлон")
         }
         if isOlympic ?? false {
-            sports.append("Олимпиада")
+            sports.append("Олимпийские игры")
         }
         
         service.fetch(date: Date(), sports: sports) { result in

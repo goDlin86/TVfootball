@@ -24,8 +24,9 @@ struct OptionsView: View {
             }
             Toggle("Олимпиада 2022", isOn: $isOlympic).onChange(of: isOlympic) { _ in
                 scheduleStore.fetch()
-            }.disabled(true)
+            }
         }
+        .padding(/*@START_MENU_TOKEN@*/.vertical, 1.0/*@END_MENU_TOKEN@*/)
     }
 }
 

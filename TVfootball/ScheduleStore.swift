@@ -30,7 +30,7 @@ final class ScheduleStore: ObservableObject {
             sports.append("Биатлон")
         }
         if isOlympic ?? false {
-            sports.append("Олимпиада")
+            sports.append("Олимпийские игры")
         }
         
         data = [ScheduleDay](repeating: ScheduleDay(date: "", items: []), count: 7)
