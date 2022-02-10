@@ -8,25 +8,13 @@
 import SwiftUI
 
 struct OptionsView: View {
-    @EnvironmentObject var scheduleStore: ScheduleStore
-    
-    @AppStorage("isFootball", store: UserDefaults(suiteName: "home.TVfootball.tv")) var isFootball = true
-    @AppStorage("isBiathlon", store: UserDefaults(suiteName: "home.TVfootball.tv")) var isBiathlon = false
-    @AppStorage("isOlympic", store: UserDefaults(suiteName: "home.TVfootball.tv")) var isOlympic = false
     
     var body: some View {
         HStack {
-            Toggle("Футбол", isOn: $isFootball).onChange(of: isFootball) { _ in
-                scheduleStore.fetch()
-            }
-            Toggle("Биатлон", isOn: $isBiathlon).onChange(of: isBiathlon) { _ in
-                scheduleStore.fetch()
-            }
-            Toggle("Олимпиада 2022", isOn: $isOlympic).onChange(of: isOlympic) { _ in
-                scheduleStore.fetch()
+            ForEach(Config.sports, id: \.key) {  ToggleSportView(sport: $0)
             }
         }
-        .padding(/*@START_MENU_TOKEN@*/.vertical, 1.0/*@END_MENU_TOKEN@*/)
+        .padding(.vertical, 1)
     }
 }
 

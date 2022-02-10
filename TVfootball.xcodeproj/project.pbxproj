@@ -14,6 +14,9 @@
 		D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D46529172790663E00B7CDFF /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46529162790663E00B7CDFF /* OptionsView.swift */; };
 		D46E21FF24F6CDA0000735E1 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA024ED7CA00060CB1D /* ScheduleService.swift */; };
+		D48E35D227B551520008B1D9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E35D127B551520008B1D9 /* Config.swift */; };
+		D48E35D427B558070008B1D9 /* ToggleSportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E35D327B558070008B1D9 /* ToggleSportView.swift */; };
+		D48E35D527B568950008B1D9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E35D127B551520008B1D9 /* Config.swift */; };
 		D498DD9124ED79C80060CB1D /* TVfootballApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DD9024ED79C80060CB1D /* TVfootballApp.swift */; };
 		D498DD9324ED79C80060CB1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DD9224ED79C80060CB1D /* ContentView.swift */; };
 		D498DD9524ED79CB0060CB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D498DD9424ED79CB0060CB1D /* Assets.xcassets */; };
@@ -58,6 +61,8 @@
 		D4271B3524F55C9800318765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4271B3624F55C9800318765 /* TVfootbalWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TVfootbalWidget.entitlements; sourceTree = "<group>"; };
 		D46529162790663E00B7CDFF /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		D48E35D127B551520008B1D9 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D48E35D327B558070008B1D9 /* ToggleSportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSportView.swift; sourceTree = "<group>"; };
 		D498DD8D24ED79C80060CB1D /* TVfootball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVfootball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D498DD9024ED79C80060CB1D /* TVfootballApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVfootballApp.swift; sourceTree = "<group>"; };
 		D498DD9224ED79C80060CB1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +149,8 @@
 				D498DDA424EDA6770060CB1D /* ScheduleRow.swift */,
 				D4D16D4224EEC14A00E2AE62 /* ScheduleDayRow.swift */,
 				D46529162790663E00B7CDFF /* OptionsView.swift */,
+				D48E35D127B551520008B1D9 /* Config.swift */,
+				D48E35D327B558070008B1D9 /* ToggleSportView.swift */,
 			);
 			path = TVfootball;
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48E35D527B568950008B1D9 /* Config.swift in Sources */,
 				D4BE4D7524F8110200E6F57A /* ScheduleRow.swift in Sources */,
 				D46E21FF24F6CDA0000735E1 /* ScheduleService.swift in Sources */,
 				D4271B3224F55C9100318765 /* TVfootbalWidget.swift in Sources */,
@@ -268,11 +276,13 @@
 			files = (
 				D498DDA324ED8DD20060CB1D /* ScheduleStore.swift in Sources */,
 				D498DDA124ED7CA00060CB1D /* ScheduleService.swift in Sources */,
+				D48E35D227B551520008B1D9 /* Config.swift in Sources */,
 				D4D16D4324EEC14A00E2AE62 /* ScheduleDayRow.swift in Sources */,
 				D46529172790663E00B7CDFF /* OptionsView.swift in Sources */,
 				D498DD9324ED79C80060CB1D /* ContentView.swift in Sources */,
 				D498DD9124ED79C80060CB1D /* TVfootballApp.swift in Sources */,
 				D498DDA524EDA6770060CB1D /* ScheduleRow.swift in Sources */,
+				D48E35D427B558070008B1D9 /* ToggleSportView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ struct ScheduleDayRow: View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
                 Text(day.date.capitalized)
-                    .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                    .font(.title2)
                     .fontWeight(.heavy)
                     .foregroundColor(.gray)
                     .padding(.bottom, 10.0)

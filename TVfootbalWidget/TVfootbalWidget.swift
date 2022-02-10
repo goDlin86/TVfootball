@@ -11,11 +11,7 @@ import SwiftUI
 struct Provider: TimelineProvider {
     
     let service = ScheduleService()
-    
-    @AppStorage("isFootball", store: UserDefaults(suiteName: "home.TVfootball.tv")) private var isFootball: Bool?
-    @AppStorage("isBiathlon", store: UserDefaults(suiteName: "home.TVfootball.tv")) private var isBiathlon: Bool?
-    @AppStorage("isOlympic", store: UserDefaults(suiteName: "home.TVfootball.tv")) private var isOlympic: Bool?
-    
+       
     func placeholder(in context: Context) -> ScheduleEntry {
         ScheduleEntry(date: Date(), day: ScheduleDay(date: "23 aug", items: []))
     }
@@ -30,14 +26,11 @@ struct Provider: TimelineProvider {
         let components = DateComponents(hour: 2)
         let futureDate = Calendar.current.date(byAdding: components, to: Date())!
         var sports: [String] = []
-        if isFootball ?? true {
-            sports.append("Футбол")
-        }
-        if isBiathlon ?? false {
-            sports.append("Биатлон")
-        }
-        if isOlympic ?? false {
-            sports.append("Олимпийские игры")
+        
+        Config.sports.forEach { sport in
+            if UserDefaults(suiteName: "home.TVfootball.tv")?.bool(forKey: sport.key) ?? false {
+                sports.append(sport.search)
+            }
         }
         
         service.fetch(date: Date(), sports: sports) { result in
