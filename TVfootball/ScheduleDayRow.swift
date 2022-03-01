@@ -13,11 +13,15 @@ struct ScheduleDayRow: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
-                Text(day.date.capitalized)
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.gray)
-                    .padding(.bottom, 10.0)
+                VStack(alignment: .leading) {
+                    ForEach(day.date.capitalized.components(separatedBy: ", "), id: \.self) { s in
+                        Text(s)
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                            .foregroundColor(.gray)
+                    }
+                }.padding(.bottom, 10.0)
+                
                 ForEach(day.items, id: \.time) {
                     item in ScheduleRow(item: item)
                 }

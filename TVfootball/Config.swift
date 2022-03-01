@@ -17,6 +17,6 @@ struct Config {
     static let sports = [
         SportType(key: "isFootball", name: "Футбол",         search: "Футбол"),
         SportType(key: "isBiathlon", name: "Биатлон",        search: "Биатлон"),
-        SportType(key: "isOlympic",  name: "Олимпиада 2022", search: "Олимпийские игры")
+        //SportType(key: "isOlympic",  name: "Олимпиада 2022", search: "Олимпийские игры")
     ]
 }
