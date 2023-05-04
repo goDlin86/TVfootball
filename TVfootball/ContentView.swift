@@ -23,12 +23,8 @@ struct ContentView: View {
             }
             .padding(10)
         }
-        .frame(minWidth: 800, maxWidth: .infinity, minHeight: 600, maxHeight: .infinity, alignment: .center)
-        .onAppear(perform: fetch)
-    }
-    
-    private func fetch() {
-        scheduleStore.fetch()
+        .frame(minWidth: 1100, minHeight: 600, alignment: .center)
+        .onAppear(perform: scheduleStore.fetch)
     }
 }
 

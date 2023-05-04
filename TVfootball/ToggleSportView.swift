@@ -10,7 +10,7 @@ import SwiftUI
 struct ToggleSportView: View {
     @EnvironmentObject var scheduleStore: ScheduleStore
     
-    let sport: SportType
+    private let sport: SportType
     @AppStorage var isOn: Bool
     
     init(sport: SportType) {
@@ -19,8 +19,9 @@ struct ToggleSportView: View {
     }
     
     var body: some View {
-        Toggle(sport.name, isOn: $isOn).onChange(of: isOn) { _ in
-            scheduleStore.fetch()
-        }
+        Toggle(sport.name, isOn: $isOn)
+            .onChange(of: isOn) { _ in
+                scheduleStore.fetch()
+            }
     }
 }
