@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,7 @@
 		D4271B2F24F55C9100318765 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4271B2E24F55C9100318765 /* SwiftUI.framework */; };
 		D4271B3224F55C9100318765 /* TVfootbalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4271B3124F55C9100318765 /* TVfootbalWidget.swift */; };
 		D4271B3424F55C9800318765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4271B3324F55C9800318765 /* Assets.xcassets */; };
-		D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D4271B2A24F55C9100318765 /* TVfootbalWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D46529172790663E00B7CDFF /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46529162790663E00B7CDFF /* OptionsView.swift */; };
 		D46E21FF24F6CDA0000735E1 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498DDA024ED7CA00060CB1D /* ScheduleService.swift */; };
 		D48E35D227B551520008B1D9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48E35D127B551520008B1D9 /* Config.swift */; };
@@ -39,15 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D4271B3A24F55C9800318765 /* Embed App Extensions */ = {
+		D4271B3A24F55C9800318765 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed App Extensions */,
+				D4271B3924F55C9800318765 /* TVfootbalWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -190,7 +190,7 @@
 				D498DD8924ED79C80060CB1D /* Sources */,
 				D498DD8A24ED79C80060CB1D /* Frameworks */,
 				D498DD8B24ED79C80060CB1D /* Resources */,
-				D4271B3A24F55C9800318765 /* Embed App Extensions */,
+				D4271B3A24F55C9800318765 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -208,8 +208,9 @@
 		D498DD8524ED79C80060CB1D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					D4271B2924F55C9100318765 = {
 						CreatedOnToolsVersion = 12.0;
@@ -305,6 +306,7 @@
 				CODE_SIGN_ENTITLEMENTS = TVfootbalWidget/TVfootbalWidget.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = DSDJBCKZT4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = TVfootbalWidget/Info.plist;
@@ -313,7 +315,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.TVfootball.TVfootbalWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -329,6 +331,7 @@
 				CODE_SIGN_ENTITLEMENTS = TVfootbalWidget/TVfootbalWidget.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = DSDJBCKZT4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = TVfootbalWidget/Info.plist;
@@ -337,7 +340,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.TVfootball.TVfootbalWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -379,9 +382,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -396,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -440,9 +445,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -451,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -470,16 +477,18 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TVfootball/Preview Content\"";
 				DEVELOPMENT_TEAM = DSDJBCKZT4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TVfootball/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.TVfootball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -496,16 +505,18 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TVfootball/Preview Content\"";
 				DEVELOPMENT_TEAM = DSDJBCKZT4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TVfootball/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.TVfootball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

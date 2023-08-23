@@ -77,6 +77,7 @@ struct TVfootbalWidgetEntryView : View {
             }
         }
         .padding(10)
+        .containerBackground(.black, for: .widget)
     }
 }
 
