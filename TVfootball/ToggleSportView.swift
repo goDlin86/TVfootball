@@ -20,7 +20,7 @@ struct ToggleSportView: View {
     
     var body: some View {
         Toggle(sport.name, isOn: $isOn)
-            .onChange(of: isOn) { _ in
+            .onChange(of: isOn) {
                 scheduleStore.fetch()
             }
     }

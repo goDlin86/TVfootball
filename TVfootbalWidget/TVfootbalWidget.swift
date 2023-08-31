@@ -23,8 +23,7 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         
-        let components = DateComponents(hour: 2)
-        let futureDate = Calendar.current.date(byAdding: components, to: Date())!
+        let futureDate = Calendar.current.date(byAdding: .hour, value: 1, to: Date())!
         var sports: [String] = []
         
         Config.sports.forEach { sport in
@@ -91,6 +90,7 @@ struct TVfootbalWidget: Widget {
         }
         .configurationDisplayName("TV football")
         .description("Match TV football")
+        .contentMarginsDisabled()
     }
 }
 
