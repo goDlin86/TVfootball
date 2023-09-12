@@ -14,12 +14,10 @@ struct OptionsView: View {
             ForEach(Config.sports, id: \.key) {  ToggleSportView(sport: $0)
             }
         }
-        .padding(.vertical, 1)
+        .padding(.top, 10)
     }
 }
 
-struct OptionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        OptionsView()
-    }
+#Preview {
+    OptionsView()
 }

@@ -93,9 +93,3 @@ struct TVfootbalWidget: Widget {
         .contentMarginsDisabled()
     }
 }
-
-struct TVfootbalWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        TVfootbalWidgetEntryView(day: ScheduleDay(date: "27 august", items: []))
-    }
-}

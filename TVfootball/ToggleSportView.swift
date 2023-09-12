@@ -25,3 +25,7 @@ struct ToggleSportView: View {
             }
     }
 }
+
+#Preview {
+    ToggleSportView(sport: Config.sports[0])
+}
