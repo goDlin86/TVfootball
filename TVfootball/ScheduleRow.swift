@@ -12,10 +12,10 @@ struct ScheduleRow: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(item.time)
+            Text(item.start)
                 .font(.subheadline)
                 .foregroundColor(Color(white: 1, opacity: 0.6))
-            Text(item.title)
+            Text(item.name)
                 .font(.headline)
                 .foregroundColor(Color(white: 1, opacity: 0.85))
         }

@@ -21,7 +21,7 @@ struct ScheduleDayRow: View {
                 }
             }.padding(.bottom, 10.0)
             
-            ForEach(day.items, id: \.time) {
+            ForEach(day.items, id: \.start) {
                 item in ScheduleRow(item: item)
             }
         }

@@ -48,7 +48,7 @@ class ScheduleService {
                         .success(
                             ScheduleDay(
                                 date: dayFormatter.string(for: date) ?? "23 aug",
-                                items: response?.items.filter { sports.contains(where: $0.title.contains) } ?? []
+                                items: response?.schedule[0].event.current.filter { sports.contains(where: $0.name.contains) } ?? []
                             )
                         )
                     )
@@ -67,59 +67,20 @@ struct ScheduleDay {
     let items: [ScheduleItem]
 }
 
-struct ScheduleItem: Decodable {
-    let title: String
-    let time: String
-    let url: String
-    //let hour: Int
-    //let min: Int
+struct ScheduleResponse: Decodable {
+    let schedule: [Schedule]
     
-    enum CodingKeys: String, CodingKey {
-        case name
-        case episode_title
-        case start
-        case url
-    }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
+    struct Schedule: Decodable {
+        let event: Event
         
-        let name = try values.decode(String.self, forKey: .name)
-        let ep = try values.decode(String.self, forKey: .episode_title)
-        title = name + " " + ep
-        
-        time = try values.decode(String.self, forKey: .start)
-        
-        let u = try values.decode(String.self, forKey: .url)
-        url = "https://tv.mail.ru" + u
+        struct Event: Decodable {
+            let current: [ScheduleItem]
+        }
     }
 }
 
-struct ScheduleResponse: Decodable {
-    var items: [ScheduleItem]
-          
-    enum CodingKeys: String, CodingKey {
-        case schedule
-    }
-    
-    enum ScheduleKeys: String, CodingKey {
-        case event
-    }
-    
-    enum EventKeys: String, CodingKey {
-        case current
-    }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        
-        var schedules = try values.nestedUnkeyedContainer(forKey: .schedule)
-        
-        //while !schedules.isAtEnd {
-            let schedule = try schedules.nestedContainer(keyedBy: ScheduleKeys.self)
-            let current = try schedule.nestedContainer(keyedBy: EventKeys.self, forKey: .event)
-            
-            items = try current.decode([ScheduleItem].self, forKey: .current)
-        //}
-    }
+struct ScheduleItem: Decodable {
+    let name: String
+    let start: String
+    let url: String
 }

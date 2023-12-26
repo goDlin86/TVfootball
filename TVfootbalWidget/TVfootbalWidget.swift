@@ -71,7 +71,7 @@ struct TVfootbalWidgetEntryView : View {
                     .frame(height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
             .padding(.bottom, 5)
-            ForEach(day.items.prefix(2), id: \.time) {
+            ForEach(day.items.prefix(2), id: \.start) {
                 item in ScheduleRow(item: item)
             }
         }
